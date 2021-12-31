@@ -1,0 +1,85 @@
+body {
+  background-color: rgb(118, 187, 101) !important;
+  font-family: "work sans";
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin:  2rem;
+}
+
+#loginform{
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 100%;
+  margin: 100px auto;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-form-item-explain-error {
+  color: red;
+} 
+
+#headerTitle {
+  text-align: center;
+  font-family: 'open sans', sans-serif;
+  padding: 2rem 0;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.ant-row{
+  margin-bottom: 1.5rem;
+}
+
+.ant-row input, .login-form-forgot, .ant-btn {
+  margin-left: 0.8rem;
+}
+
+.ant-form-item-explain-error{
+  margin-left: 1.8rem;
+}
+
+.login-form-button{
+  border-radius: 25px;
+    width: 80%;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    background: rgb(34,193,195);
+    background: linear-gradient(
+    90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+}
+
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
