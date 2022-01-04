@@ -32,8 +32,9 @@ code {
   align-items: center;
 }
 
-.ant-form-item-explain-error {
+.ant-form-item-explain-error, .ant-form-item-explain-Warning {
   color: red;
+  margin-left: 1.8rem;
 } 
 
 #headerTitle {
@@ -50,10 +51,6 @@ code {
 
 .ant-row input, .login-form-forgot, .ant-btn {
   margin-left: 0.8rem;
-}
-
-.ant-form-item-explain-error{
-  margin-left: 1.8rem;
 }
 
 .login-form-button{
