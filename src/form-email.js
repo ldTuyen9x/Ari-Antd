@@ -18,34 +18,30 @@ class FormEmailComponent extends React.Component {
   }
 
   onChange(e) {
-    this.setState({
-      email: e.target.value,
-    });
+    const email = e.target.value;
+    const isEmailValid = this.emailValidation(email);
+    this.setState(
+      {
+        email: email,
+        isvalid: isEmailValid,
+        result: isEmailValid
+          ? "Success"
+          : "Error",
+      },
+      () => this.props.onEmailSubmit(this.state)
+    );
   }
 
-  emailValidation() {
+  emailValidation(email) {
     const regex =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return !(!this.state.email || regex.test(this.state.email) === false);
+    return !(!email || regex.test(email) === false);
   }
 
-  onSubmit() {
-    if (this.state.email){
-      const isEmailValid = this.emailValidation();
-      this.setState(
-        {
-          isvalid: isEmailValid,
-          result: isEmailValid
-            ? "Success"
-            : "Error",
-        },
-        () => this.props.onEmailSubmit(this.state)
-      );
-
-      // Email is valid
-      if (this.state.isvalid) {
-        console.log(this.state);
-      }
+  onSubmit = (form) => {
+    // Email is valid
+    if (this.state.isvalid) {
+      console.log(this.state);
     }
   }
 
@@ -57,6 +53,7 @@ class FormEmailComponent extends React.Component {
             name="normal_login"
             className="login-form"
             initialValues={{ remember: true }}
+            onFinish = {this.onSubmit}
           >
             <div id="headerTitle">
               <PageHeader subTitle="LOGIN"/>
@@ -90,7 +87,7 @@ class FormEmailComponent extends React.Component {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button" onClick={() => this.onSubmit()}>
+              <Button type="primary" htmlType="submit" className="login-form-button">
                 Log in
               </Button>
             </Form.Item>
